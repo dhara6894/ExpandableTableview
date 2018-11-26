@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var tableview: ExpyTableView!
     
-    var aSelected = true
+    var isAselected = true
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.estimatedRowHeight = 100
@@ -20,13 +20,27 @@ class ViewController: UIViewController {
         tableview.expandingAnimation = .fade
         tableview.collapsingAnimation = .fade
     }
+}
 
+extension ViewController: ButtonSelectionDelegate{
+    func aSelected() {
+        isAselected = true
+        tableview.reloadData()
+    }
+    func bSelected() {
+        isAselected = false
+        tableview.reloadData()
+    }
 }
 extension ViewController: ExpyTableViewDataSource {
-    
-
+    func tableView(_ tableView: ExpyTableView, canExpandSection section: Int) -> Bool {
+        if section >= 3 && !isAselected{
+            return true
+        }
+        return false
+    }
     func tableView(_ tableView: ExpyTableView, expandableCellForSection section: Int) -> UITableViewCell {
-        if section == 3 && !aSelected{
+        if section >= 3 && !isAselected{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BCell") as? BCell else { return UITableViewCell() }
             return cell
         }
@@ -34,7 +48,7 @@ extension ViewController: ExpyTableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return aSelected ? 3 : (3 + 5)
+        return isAselected ? 4 : (3 + 5)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -42,10 +56,10 @@ extension ViewController: ExpyTableViewDataSource {
             return 5
         case 2:
             return 1
-        case 3:
-            return aSelected ? 2 : 2
+       case _ where section >= 3:
+            return isAselected ? 6 : 2
         default:
-            return 1
+            return 2
         }
     }
     
@@ -56,13 +70,15 @@ extension ViewController: ExpyTableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonSelectionCell", for: indexPath) as? ButtonSelectionCell else { return UITableViewCell() }
+            cell.delegate = self
             return cell
-        case 3:
-            if aSelected{
+        case _ where indexPath.section >= 3:
+            if isAselected{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "ACell", for: indexPath) as? ACell else { return UITableViewCell() }
                 return cell
             }else{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "BDetailCell", for: indexPath) as? BDetailCell else { return UITableViewCell() }
+                cell.descLabel.text = "Ukraine's navy had accused Russia of the unprecedented incident including firing on its vessels in the Kerch Strait, a narrow waterway that gives access to the Sea of Azov that is used by Ukraine and Russia."
                 return cell
             }
         default:
@@ -81,10 +97,10 @@ extension ViewController : ExpyTableViewDelegate{
             return 60
         case 2:
             return 50
-        case 3:
-            return aSelected ? 90 : indexPath.row == 0 ? 70 : UITableViewAutomaticDimension
+         case _ where indexPath.section >= 3:
+            return isAselected ? 90 : (indexPath.row == 0 ? 70 : UITableViewAutomaticDimension)
         default:
-            return 50
+              return 50
         }
     }
 }

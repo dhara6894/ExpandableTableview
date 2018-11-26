@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol ButtonSelectionDelegate {
+    func aSelected()
+    func bSelected()
+}
 class ButtonSelectionCell: UITableViewCell {
 
     @IBOutlet var AButton: UIButton!
     @IBOutlet var BButton: UIButton!
+    var delegate: ButtonSelectionDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,8 +28,11 @@ class ButtonSelectionCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func AButtonTapped(_ sender: Any) {
+        
+        delegate?.aSelected()
     }
     @IBAction func BButtonTapped(_ sender: Any) {
+        delegate?.bSelected()
     }
     
 }
