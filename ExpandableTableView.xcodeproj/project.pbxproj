@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29C9606F21A7D62700659481 /* TableSectionWithExpand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableSectionWithExpand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C9606F21A7D62700659481 /* ExpandableTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandableTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C9607221A7D62700659481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C9607721A7D62700659481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29C9607921A7D62A00659481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		29C9606621A7D62700659481 = {
 			isa = PBXGroup;
 			children = (
-				29C9607121A7D62700659481 /* TableSectionWithExpand */,
+				29C9607121A7D62700659481 /* ExpandableTableView */,
 				29C9607021A7D62700659481 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		29C9607021A7D62700659481 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29C9606F21A7D62700659481 /* TableSectionWithExpand.app */,
+				29C9606F21A7D62700659481 /* ExpandableTableView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29C9607121A7D62700659481 /* TableSectionWithExpand */ = {
+		29C9607121A7D62700659481 /* ExpandableTableView */ = {
 			isa = PBXGroup;
 			children = (
 				29C9609021A7E0E500659481 /* ExpandableTableView */,
@@ -72,7 +72,7 @@
 				C820EEDC25932A7400E98CDC /* TitleTableViewCell.swift */,
 				C820EEDE25932A7E00E98CDC /* DetailTableViewCell.swift */,
 			);
-			path = TableSectionWithExpand;
+			path = ExpandableTableView;
 			sourceTree = "<group>";
 		};
 		29C9609021A7E0E500659481 /* ExpandableTableView */ = {
@@ -87,9 +87,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29C9606E21A7D62700659481 /* TableSectionWithExpand */ = {
+		29C9606E21A7D62700659481 /* ExpandableTableView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C9608121A7D62A00659481 /* Build configuration list for PBXNativeTarget "TableSectionWithExpand" */;
+			buildConfigurationList = 29C9608121A7D62A00659481 /* Build configuration list for PBXNativeTarget "ExpandableTableView" */;
 			buildPhases = (
 				29C9606B21A7D62700659481 /* Sources */,
 				29C9606C21A7D62700659481 /* Frameworks */,
@@ -99,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = TableSectionWithExpand;
+			name = ExpandableTableView;
 			productName = TableSectionWithExpand;
-			productReference = 29C9606F21A7D62700659481 /* TableSectionWithExpand.app */;
+			productReference = 29C9606F21A7D62700659481 /* ExpandableTableView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 29C9606A21A7D62700659481 /* Build configuration list for PBXProject "TableSectionWithExpand" */;
+			buildConfigurationList = 29C9606A21A7D62700659481 /* Build configuration list for PBXProject "ExpandableTableView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29C9606E21A7D62700659481 /* TableSectionWithExpand */,
+				29C9606E21A7D62700659481 /* ExpandableTableView */,
 			);
 		};
 /* End PBXProject section */
@@ -240,6 +240,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = ExpandableTableView;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -293,6 +294,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ExpandableTableView;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -305,12 +307,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TableSectionWithExpand/Info.plist;
+				INFOPLIST_FILE = ExpandableTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sa.TableSectionWithExpand;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa.ExpandableTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,12 +324,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TableSectionWithExpand/Info.plist;
+				INFOPLIST_FILE = ExpandableTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sa.TableSectionWithExpand;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa.ExpandableTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -337,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29C9606A21A7D62700659481 /* Build configuration list for PBXProject "TableSectionWithExpand" */ = {
+		29C9606A21A7D62700659481 /* Build configuration list for PBXProject "ExpandableTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C9607F21A7D62A00659481 /* Debug */,
@@ -346,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C9608121A7D62A00659481 /* Build configuration list for PBXNativeTarget "TableSectionWithExpand" */ = {
+		29C9608121A7D62A00659481 /* Build configuration list for PBXNativeTarget "ExpandableTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C9608221A7D62A00659481 /* Debug */,
