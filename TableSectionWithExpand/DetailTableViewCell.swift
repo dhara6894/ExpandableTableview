@@ -1,15 +1,16 @@
 //
-//  ACell.swift
+//  DetailTableViewCell.swift
 //  TableSectionWithExpand
 //
-//  Created by Dhara Patel on 23/11/18.
-//  Copyright © 2018 Solution Analysts. All rights reserved.
+//  Created by Dhara Patel on 23/12/20.
+//  Copyright © 2020 Solution Analysts. All rights reserved.
 //
 
 import UIKit
 
-class ACell: UITableViewCell {
+class DetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var detailLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
